@@ -26,7 +26,9 @@
 
     <div class="items-section">
       <label>Productos y Cantidad</label>
-      <div id="items-table"></div>
+      <div id="items-table">
+        <!-- Item rows go here -->
+      </div>
       <div class="row-btns">
         <button type="button" class="add-row-btn" onclick="addRow()">+ Agregar producto</button>
         <button type="button" class="remove-row-btn" onclick="removeRow()">- Eliminar producto</button>
@@ -39,9 +41,9 @@
   </div>
 
   <script>
-    // --- PASTE YOUR PRODUCT JSONS BELOW ---
+    // --- DUMMY DATA: Replace this with your real productsPorCirugia ---
     const productsPorCirugia = {
-      "ORT1": [
+   "ORT1": [
         {"id":"ZI0.6-11","desc":"Placa Recta 2 Perforaciones"},
         {"id":"ZI1.0-12.1","desc":"Placa Recta 4 Perforaciones Pte. Pequeño"},
         {"id":"ZI1.0-12","desc":"Placa Recta 4 Perforaciones Pte. Mediano"},
@@ -295,79 +297,149 @@
         {"id":"FC-053","desc":"Kit Frío Continuo"}
       ]
     };
+    // ---------------------------------------------------------------
 
-    // --- JS LOGIC ---
+    let itemRows = [];
+    const MIN_ROWS = 1;
 
-    // Populate surgery dropdown
+    // Fill Cirugia options
     function fillCirugiaOptions() {
-      const cirugiaSelect = document.getElementById('cirugia');
-      cirugiaSelect.innerHTML = '';
-      Object.keys(productsPorCirugia).forEach(codigo => {
-        const option = document.createElement('option');
-        option.value = codigo;
-        option.textContent = codigo;
-        cirugiaSelect.appendChild(option);
+      const sel = document.getElementById('cirugia');
+      sel.innerHTML = '';
+      Object.keys(productsPorCirugia).forEach(k => {
+        let opt = document.createElement('option');
+        opt.value = k;
+        opt.textContent = k;
+        sel.appendChild(opt);
       });
     }
 
-    // Create item rows for product/qty selection
-    let currentRows = 1;
-    function renderItemsTable() {
-      const tableDiv = document.getElementById('items-table');
-      const cirugia = document.getElementById('cirugia').value;
-      const productos = productsPorCirugia[cirugia] || [];
-      let html = '';
-      for (let i = 0; i < currentRows; i++) {
-        html += `<div class="item-row">
-          <select>
-            ${productos.map(prod => `<option value="${prod.id}">${prod.desc}</option>`).join('')}
-          </select>
-          <input type="number" min="1" value="1">
-        </div>`;
+    // Build a product row
+    function createRow(selectedList, selectedId = '', qty = '') {
+      const rowDiv = document.createElement('div');
+      rowDiv.className = 'item-row';
+
+      // Product dropdown
+      const productSel = document.createElement('select');
+      productSel.setAttribute('aria-label', 'Producto');
+      fillProductOptions(productSel, selectedList, selectedId);
+
+      // Quantity input
+      const qtyInput = document.createElement('input');
+      qtyInput.type = 'number';
+      qtyInput.min = '0';
+      qtyInput.inputMode = 'numeric';
+      qtyInput.pattern = '[0-9]*';
+      qtyInput.value = qty;
+      qtyInput.setAttribute('aria-label', 'Cantidad');
+      qtyInput.style.textAlign = 'center';
+
+      // Sync vertical height
+      productSel.style.height = '56px';
+      qtyInput.style.height = '56px';
+
+      rowDiv.appendChild(productSel);
+      rowDiv.appendChild(qtyInput);
+
+      return rowDiv;
+    }
+
+    function fillProductOptions(sel, listKey, selectedId) {
+      sel.innerHTML = '';
+      if (productsPorCirugia[listKey]) {
+        productsPorCirugia[listKey].forEach(item => {
+          const option = document.createElement('option');
+          option.value = item.id;
+          option.textContent = `${item.id} - ${item.desc}`;
+          if (item.id === selectedId) option.selected = true;
+          sel.appendChild(option);
+        });
       }
-      tableDiv.innerHTML = html;
     }
 
-    function addRow() {
-      currentRows++;
-      renderItemsTable();
+    function addRow(selectedId = '', qty = '') {
+      const listKey = document.getElementById('cirugia').value;
+      const rowDiv = createRow(listKey, selectedId, qty);
+      itemRows.push(rowDiv);
+      renderRows();
     }
+
     function removeRow() {
-      if (currentRows > 1) currentRows--;
-      renderItemsTable();
+      if (itemRows.length > MIN_ROWS) {
+        itemRows.pop();
+        renderRows();
+      }
     }
 
-    // When surgery changes, rerender product dropdowns
-    document.addEventListener('DOMContentLoaded', () => {
-      fillCirugiaOptions();
-      renderItemsTable();
-      document.getElementById('cirugia').addEventListener('change', renderItemsTable);
-    });
+    function renderRows() {
+      const itemsTable = document.getElementById('items-table');
+      itemsTable.innerHTML = '';
+      const listKey = document.getElementById('cirugia').value;
+      itemRows.forEach(row => {
+        const select = row.querySelector('select');
+        fillProductOptions(select, listKey, select.value);
+        itemsTable.appendChild(row);
+      });
+    }
 
-    // Generate CSV
+    function resetRows(n = MIN_ROWS) {
+      itemRows = [];
+      for (let i = 0; i < n; ++i) addRow();
+    }
+
+    function getToday() {
+      const d = new Date();
+      return d.toISOString().split('T')[0];
+    }
+
     function generateCSV() {
       const recinto = document.getElementById('recinto').value.trim();
       const cirujano = document.getElementById('cirujano').value.trim();
       const paciente = document.getElementById('paciente').value.trim();
       const cirugia = document.getElementById('cirugia').value;
-      let rows = Array.from(document.querySelectorAll('#items-table .item-row'));
-      let csv = 'Recinto,Cirujano,Paciente,Cirugía,Producto,Código,Cantidad\n';
-      rows.forEach(row => {
+      const fecha = getToday();
+
+      let csvLines = [
+        `Recinto\tCirujano\tPaciente\tCirugía\tFecha\tProducto\tCantidad`
+      ];
+      itemRows.forEach(row => {
         const select = row.querySelector('select');
-        const input = row.querySelector('input');
-        const code = select.value;
-        const desc = select.options[select.selectedIndex].textContent;
-        const qty = input.value || '1';
-        csv += `${recinto},${cirujano},${paciente},${cirugia},"${desc}",${code},${qty}\n`;
+        const qtyInput = row.querySelector('input');
+        let producto = select.value;
+        let cantidad = qtyInput.value.trim();
+        if (!cantidad) cantidad = '0';
+        csvLines.push(
+          [recinto, cirujano, paciente, cirugia, fecha, producto, cantidad].join('\t')
+        );
       });
-      document.getElementById('csvOutput').textContent = csv.trim();
-      document.getElementById('copyBtn').style.display = 'block';
+      const csvString = csvLines.join('\n');
+      document.getElementById('csvOutput').textContent = csvString;
+      document.getElementById('copyBtn').style.display = '';
+      copyToClipboard(csvString);
+    }
+
+    function copyToClipboard(str) {
+      if (navigator && navigator.clipboard) {
+        navigator.clipboard.writeText(str).then(() => {
+          document.getElementById('copyBtn').textContent = '¡Copiado!';
+          setTimeout(() => {
+            document.getElementById('copyBtn').textContent = 'Copiar al portapapeles';
+          }, 1500);
+        });
+      }
     }
 
     function copyOutput() {
-      const output = document.getElementById('csvOutput').textContent;
-      navigator.clipboard.writeText(output);
+      const txt = document.getElementById('csvOutput').textContent;
+      copyToClipboard(txt);
     }
+
+    // On load
+    window.onload = () => {
+      fillCirugiaOptions();
+      resetRows(2);
+      document.getElementById('cirugia').addEventListener('change', renderRows);
+    };
   </script>
 </body>
 </html>
