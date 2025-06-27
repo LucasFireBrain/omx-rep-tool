@@ -1,0 +1,127 @@
+OR210-0044	Placa Avance de Mentón 4 mm
+52-23708	Tornillo Autorroscante 2.3 x 8 mm
+54-05102	Placa Recta 2 Perforaciones
+01-08203	Placa Recta 4 Perforaciones Pte. Pequeño
+01-08205	Placa Recta 4 Perforaciones Pte. Mediano
+01-08205-15	Placa Recta 4 Perforaciones Pte. Largo
+01-08205-20	Placa Recta 4 Perforaciones Pte. X Largo
+01-08207	Placa Recta 6 Perforaciones C/Pte.
+01-08216	Placa Recta 16 Perforaciones
+01-08234	Placa L 4 Perforaciones Mediana Der.
+01-08235	Placa L 4 Perforaciones Mediana Izq.
+01-08232	Placa L 4 Perforaciones Larga Der.
+01-08233	Placa L 4 Perforaciones Larga Izq.
+01-08324E	Placa L 4 Perf. 100º Pequeña Der.
+01-08325E	Placa L 4 Perf. 100º Pequeña Izq.
+01-08324X	Placa L 4 Perf. 100º Mediana Der.
+01-08325X	Placa L 4 Perf. 100º Mediana Izq.
+01-08324XE	Placa L 4 Perf. 100º Larga Der.
+01-08325XE	Placa L 4 Perf. 100º Larga Izq.
+01-08259	Placa Doble Y 4 Perforaciones
+01-08260	Placa Doble Y 5 Perforaciones
+PA.01.031251	Placa Adelanto Maxilar 2 mm
+PA.01.031254	Placa Adelanto Maxilar 4 mm
+PA.01.031256	Placa Adelanto Maxilar 6 mm
+PA.01.031258	Placa Adelanto Maxilar 8 mm
+SinCodigo-001	Placa En Y Segmental 13 mm
+01-100300	Placa Cigomática 5
+01-100302	Placa Cigomática 8
+OR210-0041	Placa Avance de Mentón 2 mm
+OR210-0043	Placa Avance de Mentón 4 mm
+OR210-0040	Placa Avance de Mentón 6 mm
+OR210-0042	Placa Avance de Mentón 8 mm
+OR210-0044	Placa Avance de Mentón 10 mm
+52-20705	Tornillo Autoperforante 2.0 x 5 mm
+52-20706	Tornillo Autoperforante 2.0 x 6 mm
+52-20707	Tornillo Autoperforante 2.0 x 7 mm
+52-20708	Tornillo Autorroscante 2.0 x 8 mm
+52-20710	Tornillo Autorroscante 2.0 x 10 mm
+52-20712	Tornillo Autorroscante 2.0 x 12 mm
+52-20714	Tornillo Autorroscante 2.0 x 14 mm
+52-20716	Tornillo Autorroscante 2.0 x 16 mm
+52-23707	Tornillo Autorroscante 2.3 x 6 mm
+CBMA1.5-11-105	Tornillo Dual Head 1.5 x 11 mm
+54-05105	Placa Recta 4 Perforaciones 1.5
+54-05109	Placa Recta 6 Perforaciones 1.5
+54-05116	Placa Recta 16 Perforaciones 1.5
+54-05160	Placa Doble Y 4 Perforaciones 1.5
+54-05162	Placa Doble Y 5 Perforaciones 1.5
+54-05164	Placa Doble Y 6 Perforaciones 1.5
+54-05130	Placa L 4 Perforaciones 1.5 Mediana Der.
+54-05131	Placa L 4 Perforaciones 1.5 Mediana Izq.
+54-05134	Placa L 4 Perforaciones 1.5 Larga Der.
+54-05135	Placa L 4 Perforaciones 1.5 Larga Izq.
+54-05185	Placa Orbital 4 Perforaciones 1.5
+54-05185p	Placa Orbital 4 Perforaciones 1.5 C/Pte.
+54-05186	Placa Orbital 5 Perforaciones 1.5
+54-05188	Placa Orbital 7 Perforaciones 1.5
+54-0.4-03	Piso de Órbita 11 Perforaciones 1.5
+54-0.4-04	Piso de Órbita 12 Perforaciones 1.5
+54-0.4-05	Piso de Órbita 16 Perforaciones 1.5
+54-06-601	Placa de Tracción En Y
+54-06-602	Placa de Tracción En T
+52-17204	Tornillo Autorroscante 1.5 x 4 mm
+52-17205	Tornillo Autorroscante 1.5 x 5 mm
+52-17206	Tornillo Autorroscante 1.5 x 6 mm
+52-19205	Tornillo Autorroscante 1.7 x 5 E mm
+PA.01.03.0112	Tornillo Autorroscante 2.4 x 8 mm
+PA.01.03.0114	Tornillo Autorroscante 2.4 x 10 mm
+PA.01.03.0116	Tornillo Autorroscante 2.4 x 12 mm
+PA.01.03.0118	Tornillo Autorroscante 2.4 x 14 mm
+PA.01.03.0120	Tornillo Autorroscante 2.4 x 16 mm
+PA.01.03.0131	Tornillo Autorroscante 2.7 x 10 mm
+PA.01.03.0133	Tornillo Autorroscante 2.7 x 12 mm
+PA.01.03.0135	Tornillo Autorroscante 2.7 x 14 mm
+L64933P	Placa Reconstruccion Personalizada
+54-15031	Placa Recta 4 Perforaciones Sistema 2.3
+52-23150	Tornillo Bloqueo 2.3 x 10 mm Sist. 2.3
+PKP-AMA	Set PEEK Pers. - Ángulo Mandibular A
+PKP-AMB	Set PEEK Pers. - Ángulo Mandibular B
+PKP-AMC	Set PEEK Pers. - Ángulo Mandibular C
+PKP-AMD	Set PEEK Pers. - Ángulo Mandibular D
+PKP-CZA	Set PEEK Pers. - Cigomático A
+PKP-CZB	Set PEEK Pers. - Cigomático B
+PKP-CZC	Set PEEK Pers. - Cigomático C
+PKP-CZD	Set PEEK Pers. - Cigomático D
+PKP-IFA	Set PEEK Pers. - Injerto Facial A
+PKP-IFB	Set PEEK Pers. - Injerto Facial B
+PKP-IFC	Set PEEK Pers. - Injerto Facial C
+PKP-IFD	Set PEEK Pers. - Injerto Facial D
+PKP-MNA	Set PEEK Pers. - Mentón A
+PKP-MNB	Set PEEK Pers. - Mentón B
+PKP-MNC	Set PEEK Pers. - Mentón C
+PKP-MND	Set PEEK Pers. - Mentón D
+PKP-PNA	Set PEEK Pers. - Paranasales A
+PKP-PNB	Set PEEK Pers. - Paranasales B
+PKP-PNC	Set PEEK Pers. - Paranasales C
+PKP-PND	Set PEEK Pers. - Paranasales D
+PKP-POA	Set PEEK Pers. - Piso de Órbita A
+PKP-POB	Set PEEK Pers. - Piso de Órbita B
+PKP-POC	Set PEEK Pers. - Piso de Órbita C
+PKP-POD	Set PEEK Pers. - Piso de Órbita D
+PKP-IFA	Set PEEK Pers. - Infraorbitario A
+PKP-IFB	Set PEEK Pers. - Infraorbitario B
+PKP-IFC	Set PEEK Pers. - Infraorbitario C
+PKP-IFD	Set PEEK Pers. - Infraorbitario D
+PKP-IFA	Set PEEK Pers. - Supraorbital A
+PKP-IFB	Set PEEK Pers. - Supraorbital B
+PKP-IFC	Set PEEK Pers. - Supraorbital C
+PKP-IFD	Set PEEK Pers. - Supraorbital D
+LC-04B	Fabricacion PRF (Centrifuga)
+TRAU-103A	Aguja Para Microdisección
+TRAU-104A	Aguja Para Microdisección
+US 02	Punta de piezo
+V-C-4	Vendaje Facial Postquirúrgico
+V-C-4	Vendaje Facial Postquirúrgico
+OP6316	Sphere - 14mm
+US-09	Punta de Piezo
+US-02	Punta de Piezo
+AL-0.40	Alambre 0.40 GX
+5100-337-233	Sierra Reciprocante Maxilar
+5100-137-233	Sierra Reciprocante Maxilar
+5100-137-133	Sierra Reciprocante Maxilar
+5100-137-011	Sierra Reciprocante Mandíbula
+VC-042	Vendaje Facial Postquirúrgico
+TRAU-104A	Aguja Para Microdisección
+FC-053	Kit Frío Continuo
+V-C-4	Vendaje Facial Postquirúrgico

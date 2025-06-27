@@ -1,0 +1,128 @@
+ZI0.6-11	Placa Recta 2 Perforaciones
+ZI1.0-12.1	Placa Recta 4 Perforaciones Pte. Pequeño
+ZI1.0-12	Placa Recta 4 Perforaciones Pte. Mediano
+ZI1.0-12.01	Placa Recta 4 Perforaciones Pte. Largo
+ZI1.0-12.02	Placa Recta 4 Perforaciones Pte. X Largo
+ZI1.0-13	Placa Recta 6 Perforaciones C/Pte.
+ZI1.0-07	Placa Recta 16 Perforaciones
+YL1.0-04.1	Placa L 4 Perforaciones Mediana Der.
+YL1.0-03.1	Placa L 4 Perforaciones Mediana Izq.
+YL1.0-04	Placa L 4 Perforaciones Larga Der.
+YL1.0-03	Placa L 4 Perforaciones Larga Izq.
+YL0.8-12	Placa L 4 Perf. 100º Pequeña Der.
+YL0.8-11	Placa L 4 Perf. 100º Pequeña Izq.
+YL0.8-12.2	Placa L 4 Perf. 100º Mediana Der.
+YL0.8-11.2	Placa L 4 Perf. 100º Mediana Izq.
+YL0.8-12.3	Placa L 4 Perf. 100º Larga Der.
+YL0.8-11.3	Placa L 4 Perf. 100º Larga Izq.
+YX0.8-02	Placa Doble Y 4 Perforaciones
+YX0.8-03	Placa Doble Y 5 Perforaciones
+YL0.8-305	Placa Cigomática 5
+YL0.8-308	Placa Cigomática 8
+YL0.8-313	Placa En Y Segmental 13 mm
+PA.01.031251	Placa Adelanto Maxilar 2 mm
+PA.01.031254	Placa Adelanto Maxilar 4 mm
+PA.01.031256	Placa Adelanto Maxilar 6 mm
+PA.01.031258	Placa Adelanto Maxilar 8 mm
+YX0.8-02.1	Placa Avance de Mentón 2 mm
+YX0.8-02.2	Placa Avance de Mentón 4 mm
+YX0.8-02.3	Placa Avance de Mentón 6 mm
+YX0.8-02.4	Placa Avance de Mentón 8 mm
+YX0.8-02.5	Placa Avance de Mentón 10 mm
+YY06.6-0.1	Placa de Tracción En Y
+YT0.6-01.2	Placa de Tracción En T
+MA02-2.0x5	Tornillo Autoperforante 2.0 x 5 mm
+MA02-2.0x6	Tornillo Autoperforante 2.0 x 6 mm
+MA02-2.0x7	Tornillo Autoperforante 2.0 x 7 mm
+MA02-2.0x8	Tornillo Autorroscante 2.0 x 8 mm
+MA02.2.0x10	Tornillo Autorroscante 2.0 x 10 mm
+MA02.2.0x12	Tornillo Autorroscante 2.0 x 12 mm
+MA02.2.0x14	Tornillo Autorroscante 2.0 x 14 mm
+MA02-2.3x6	Tornillo Autorroscante 2.0 x 16 mm
+MA02-2.3x8	Tornillo Autorroscante 2.3 x 6 mm
+MB1.6-11-105	Tornillo Dual Head 1.5 x 11 mm
+XXC-6	Fresón Oval de Carburo
+1608-002-035	Fresón Oval de Carburo ST
+AL-0.40GX	Alambre 0.40 GX
+60-13147	Broca Pequeña 1.3 x 47 mm
+01-08196	Broca Mediana
+01-08198	Broca Larga
+PAT-2.0	Puntas Atornillador 2.0
+PAT-IMF	Punta IMF
+ZI0.6-12	Placa Recta 4 Perforaciones 1.5
+ZI0.6-13	Placa Recta 6 Perforaciones 1.5
+ZI0.6-07	Placa Recta 16 Perforaciones 1.5
+YX0.6-02	Placa Doble Y 4 Perforaciones 1.5
+YX0.6-03	Placa Doble Y 5 Perforaciones 1.5
+YX0.6-01	Placa Doble Y 6 Perforaciones 1.5
+YLO.6-12	Placa L 4 Perforaciones 1.5 Mediana Der.
+YLO.6-11	Placa L 4 Perforaciones 1.5 Mediana Izq.
+YLO.6-12.1	Placa L 4 Perforaciones 1.5 Larga Der.
+YLO.6-11.1	Placa L 4 Perforaciones 1.5 Larga Izq.
+YV0.6-02	Placa Orbital 4 Perforaciones 1.5
+YV0.6-02	Placa Orbital 4 Perforaciones 1.5
+YV0.6-03	Placa Orbital 5 Perforaciones 1.5
+YV0.6-04	Placa Orbital 7 Perforaciones 1.5
+WX0,4-03	Piso de Órbita 11 Perforaciones 1.5
+WX0,4-04	Piso de Órbita 12 Perforaciones 1.5
+WX0,4-05	Piso de Órbita 16 Perforaciones 1.5
+MA02-1.5x4	Tornillo Autorroscante 1.5 x 4 mm
+MA02-1.5x5	Tornillo Autorroscante 1.5 x 5 mm
+MA02-1.5x6	Tornillo Autorroscante 1.5 x 6 mm
+MA02-1.7x5	Tornillo Autorroscante 1.7 x 5 E mm
+PA.01.03.0112	Tornillo Autorroscante 2.4 x 8 mm
+PA.01.03.0114	Tornillo Autorroscante 2.4 x 10 mm
+PA.01.03.0116	Tornillo Autorroscante 2.4 x 12 mm
+PA.01.03.0118	Tornillo Autorroscante 2.4 x 14 mm
+PA.01.03.0120	Tornillo Autorroscante 2.4 x 16 mm
+PA.01.03.0131	Tornillo Autorroscante 2.7 x 10 mm
+PA.01.03.0133	Tornillo Autorroscante 2.7 x 12 mm
+PA.01.03.0135	Tornillo Autorroscante 2.7 x 14 mm
+L64933P	Placa Reconstruccion Personalizada
+54-15031	Placa Recta 4 Perforaciones Sistema 2.3
+52-23150	Tornillo Bloqueo 2.3 x 10 mm Sist. 2.3
+PKP-AMA	Set PEEK Pers. - Ángulo Mandibular A
+PKP-AMB	Set PEEK Pers. - Ángulo Mandibular B
+PKP-AMC	Set PEEK Pers. - Ángulo Mandibular C
+PKP-AMD	Set PEEK Pers. - Ángulo Mandibular D
+PKP-CZA	Set PEEK Pers. - Cigomático A
+PKP-CZB	Set PEEK Pers. - Cigomático B
+PKP-CZC	Set PEEK Pers. - Cigomático C
+PKP-CZD	Set PEEK Pers. - Cigomático D
+PKP-IFA	Set PEEK Pers. - Injerto Facial A
+PKP-IFB	Set PEEK Pers. - Injerto Facial B
+PKP-IFC	Set PEEK Pers. - Injerto Facial C
+PKP-IFD	Set PEEK Pers. - Injerto Facial D
+PKP-MNA	Set PEEK Pers. - Mentón A
+PKP-MNB	Set PEEK Pers. - Mentón B
+PKP-MNC	Set PEEK Pers. - Mentón C
+PKP-MND	Set PEEK Pers. - Mentón D
+PKP-PNA	Set PEEK Pers. - Paranasales A
+PKP-PNB	Set PEEK Pers. - Paranasales B
+PKP-PNC	Set PEEK Pers. - Paranasales C
+PKP-PND	Set PEEK Pers. - Paranasales D
+PKP-POA	Set PEEK Pers. - Piso de Órbita A
+PKP-POB	Set PEEK Pers. - Piso de Órbita B
+PKP-POC	Set PEEK Pers. - Piso de Órbita C
+PKP-POD	Set PEEK Pers. - Piso de Órbita D
+PKP-IFA	Reborde Set PEEK Pers. - Infraorbitario A
+PKP-IFB	Reborde Set PEEK Pers. - Infraorbitario B
+PKP-IFC	Reborde Set PEEK Pers. - Infraorbitario C
+PKP-IFD	Reborde Set PEEK Pers. - Infraorbitario D
+PKP-IFA	Set PEEK Pers. - Supraorbital A
+PKP-IFB	Set PEEK Pers. - Supraorbital B
+PKP-IFC	Set PEEK Pers. - Supraorbital C
+PKP-IFD	Set PEEK Pers. - Supraorbital D
+TRAU-104A	Aguja Para Microdisección
+LC-04B	Fabricacion PRF (Centrifuga)
+PBCA-2	Broca Contraángulo
+PCCA-2	Punta En Cruz Contraángulo
+OP6316	Sphere - 14mm
+US-09	Punta de Piezo
+US-02	Punta de Piezo
+5100-137-233	Sierra Reciprocante Maxilar
+5100-137-233	Sierra Reciprocante Maxilar
+5100-137-133	Sierra Reciprocante Maxilar
+5100-137-011	Sierra Reciprocante Mandíbula
+TRAU-104A	Aguja Para Microdisección
+FC-053	Kit Frío Continuo
