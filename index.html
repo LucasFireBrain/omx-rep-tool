@@ -4,194 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Órdenes Cirugía - Generador</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f7f7f7;
-      margin: 0;
-      padding: 0;
-      color: #222;
-    }
-    .container {
-      max-width: 520px;
-      margin: auto;
-      padding: 16px;
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 2px 12px #0002;
-      margin-top: 8px;
-    }
-    h1 {
-      font-size: 1.25rem;
-      text-align: center;
-      margin-bottom: 14px;
-    }
-    label {
-      font-size: 1rem;
-      margin-bottom: 2px;
-      margin-left: 3px;
-      display: block;
-    }
-    .header-group {
-      margin-bottom: 16px;
-    }
-    input[type="text"], select {
-      width: 100%;
-      padding: 13px 12px;
-      margin-bottom: 10px;
-      border: 1.5px solid #bbb;
-      border-radius: 8px;
-      font-size: 1rem;
-      background: #f9f9f9;
-      box-sizing: border-box;
-      transition: border 0.15s;
-    }
-    input[type="text"]:focus, select:focus {
-      border: 1.5px solid #008cff;
-      outline: none;
-      background: #fff;
-    }
-    .dropdown-section {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-    .dropdown-section select {
-      flex: 1 1 0;
-      min-width: 0;
-      font-size: 1rem;
-      padding: 12px 8px;
-      border-radius: 10px;
-    }
-    .dropdown-section select.cirugia-select {
-      font-weight: bold;
-      background: #eef6ff;
-      border: 2px solid #008cff;
-    }
-    .items-section {
-      margin-bottom: 18px;
-    }
-    .items-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0 8px;
-    }
-    .items-table th, .items-table td {
-      text-align: left;
-      padding: 0;
-      border: none;
-    }
-    .item-row {
-      display: flex;
-      align-items: stretch;
-      gap: 8px;
-      margin-bottom: 7px;
-    }
-    .item-row select {
-      flex: 2 1 0;
-      font-size: 0.97rem;
-      padding: 19px 6px 19px 6px;
-      border-radius: 9px;
-      min-width: 0;
-      line-height: 1.1;
-      white-space: normal;
-      word-break: break-word;
-      background: #f2f2ff;
-      border: 1.5px solid #bbb;
-      box-sizing: border-box;
-      height: 56px;
-    }
-    .item-row input[type="number"] {
-      flex: 0 0 42px;
-      min-width: 0;
-      max-width: 48px;
-      font-size: 1.05rem;
-      text-align: center;
-      padding: 0;
-      margin: 0;
-      height: 56px;
-      border-radius: 9px;
-      border: 1.5px solid #bbb;
-      background: #fafbfe;
-      box-sizing: border-box;
-    }
-    .big-btn {
-      width: 100%;
-      padding: 19px;
-      font-size: 1.11rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      background: #008cff;
-      color: #fff;
-      border: none;
-      border-radius: 9px;
-      box-shadow: 0 1px 4px #0001;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    .big-btn:active {
-      background: #006dcc;
-    }
-    .row-btns {
-      display: flex;
-      gap: 8px;
-      margin-top: 3px;
-      margin-bottom: 15px;
-    }
-    .add-row-btn, .remove-row-btn {
-      flex: 1 1 0;
-      padding: 14px 0;
-      font-size: 1.05rem;
-      font-weight: 500;
-      background: #dbeeff;
-      color: #1976d2;
-      border: none;
-      border-radius: 9px;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    .add-row-btn:active, .remove-row-btn:active {
-      background: #b0dcff;
-    }
-    .remove-row-btn {
-      background: #ffe4e4;
-      color: #c62828;
-    }
-    .remove-row-btn:active {
-      background: #ffc9c9;
-    }
-    .output-group {
-      margin-top: 13px;
-      background: #f2f7fa;
-      border-radius: 8px;
-      padding: 13px 8px 8px 8px;
-      font-size: 0.97rem;
-      min-height: 40px;
-      word-break: break-all;
-      user-select: all;
-    }
-    .copy-btn {
-      display: block;
-      width: 100%;
-      padding: 14px;
-      margin-top: 8px;
-      background: #4caf50;
-      color: #fff;
-      font-weight: 600;
-      font-size: 1.07rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.14s;
-    }
-    .copy-btn:active {
-      background: #2e7d32;
-    }
-    @media (max-width: 600px) {
-      .container { margin-top: 0; border-radius: 0; box-shadow: none; }
-      .output-group { font-size: 0.91rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
@@ -213,171 +26,348 @@
 
     <div class="items-section">
       <label>Productos y Cantidad</label>
-      <div id="items-table">
-        <!-- Item rows are added here -->
-      </div>
+      <div id="items-table"></div>
       <div class="row-btns">
         <button type="button" class="add-row-btn" onclick="addRow()">+ Agregar producto</button>
         <button type="button" class="remove-row-btn" onclick="removeRow()">- Eliminar producto</button>
       </div>
     </div>
 
-    <button class="big-btn" type="button" onclick="generateCSV(event)">Generar y Copiar CSV</button>
+    <button class="big-btn" onclick="generateCSV()">Generar y Copiar CSV</button>
     <div class="output-group" id="csvOutput"></div>
     <button class="copy-btn" id="copyBtn" style="display:none;" onclick="copyOutput()">Copiar al portapapeles</button>
   </div>
 
   <script>
     // --- PASTE YOUR PRODUCT JSONS BELOW ---
-    // <--- your productsPorCirugia json object here --->
-    // --- END OF PRODUCT JSONS ---
+    const productsPorCirugia = {
+      "ORT1": [
+        {"id":"ZI0.6-11","desc":"Placa Recta 2 Perforaciones"},
+        {"id":"ZI1.0-12.1","desc":"Placa Recta 4 Perforaciones Pte. Pequeño"},
+        {"id":"ZI1.0-12","desc":"Placa Recta 4 Perforaciones Pte. Mediano"},
+        {"id":"ZI1.0-12.01","desc":"Placa Recta 4 Perforaciones Pte. Largo"},
+        {"id":"ZI1.0-12.02","desc":"Placa Recta 4 Perforaciones Pte. X Largo"},
+        {"id":"ZI1.0-13","desc":"Placa Recta 6 Perforaciones C/Pte."},
+        {"id":"ZI1.0-07","desc":"Placa Recta 16 Perforaciones"},
+        {"id":"YL1.0-04.1","desc":"Placa L 4 Perforaciones Mediana Der."},
+        {"id":"YL1.0-03.1","desc":"Placa L 4 Perforaciones Mediana Izq."},
+        {"id":"YL1.0-04","desc":"Placa L 4 Perforaciones Larga Der."},
+        {"id":"YL1.0-03","desc":"Placa L 4 Perforaciones Larga Izq."},
+        {"id":"YL0.8-12","desc":"Placa L 4 Perf. 100º Pequeña Der."},
+        {"id":"YL0.8-11","desc":"Placa L 4 Perf. 100º Pequeña Izq."},
+        {"id":"YL0.8-12.2","desc":"Placa L 4 Perf. 100º Mediana Der."},
+        {"id":"YL0.8-11.2","desc":"Placa L 4 Perf. 100º Mediana Izq."},
+        {"id":"YL0.8-12.3","desc":"Placa L 4 Perf. 100º Larga Der."},
+        {"id":"YL0.8-11.3","desc":"Placa L 4 Perf. 100º Larga Izq."},
+        {"id":"YX0.8-02","desc":"Placa Doble Y 4 Perforaciones"},
+        {"id":"YX0.8-03","desc":"Placa Doble Y 5 Perforaciones"},
+        {"id":"YL0.8-305","desc":"Placa Cigomática 5"},
+        {"id":"YL0.8-308","desc":"Placa Cigomática 8"},
+        {"id":"YL0.8-313","desc":"Placa En Y Segmental 13 mm"},
+        {"id":"PA.01.031251","desc":"Placa Adelanto Maxilar 2 mm"},
+        {"id":"PA.01.031254","desc":"Placa Adelanto Maxilar 4 mm"},
+        {"id":"PA.01.031256","desc":"Placa Adelanto Maxilar 6 mm"},
+        {"id":"PA.01.031258","desc":"Placa Adelanto Maxilar 8 mm"},
+        {"id":"YX0.8-02.1","desc":"Placa Avance de Mentón 2 mm"},
+        {"id":"YX0.8-02.2","desc":"Placa Avance de Mentón 4 mm"},
+        {"id":"YX0.8-02.3","desc":"Placa Avance de Mentón 6 mm"},
+        {"id":"YX0.8-02.4","desc":"Placa Avance de Mentón 8 mm"},
+        {"id":"YX0.8-02.5","desc":"Placa Avance de Mentón 10 mm"},
+        {"id":"YY06.6-0.1","desc":"Placa de Tracción En Y"},
+        {"id":"YT0.6-01.2","desc":"Placa de Tracción En T"},
+        {"id":"MA02-2.0x5","desc":"Tornillo Autoperforante 2.0 x 5 mm"},
+        {"id":"MA02-2.0x6","desc":"Tornillo Autoperforante 2.0 x 6 mm"},
+        {"id":"MA02-2.0x7","desc":"Tornillo Autoperforante 2.0 x 7 mm"},
+        {"id":"MA02-2.0x8","desc":"Tornillo Autorroscante 2.0 x 8 mm"},
+        {"id":"MA02.2.0x10","desc":"Tornillo Autorroscante 2.0 x 10 mm"},
+        {"id":"MA02.2.0x12","desc":"Tornillo Autorroscante 2.0 x 12 mm"},
+        {"id":"MA02.2.0x14","desc":"Tornillo Autorroscante 2.0 x 14 mm"},
+        {"id":"MA02-2.3x6","desc":"Tornillo Autorroscante 2.0 x 16 mm"},
+        {"id":"MA02-2.3x8","desc":"Tornillo Autorroscante 2.3 x 6 mm"},
+        {"id":"MB1.6-11-105","desc":"Tornillo Dual Head 1.5 x 11 mm"},
+        {"id":"XXC-6","desc":"Fresón Oval de Carburo"},
+        {"id":"1608-002-035","desc":"Fresón Oval de Carburo ST"},
+        {"id":"AL-0.40GX","desc":"Alambre 0.40 GX"},
+        {"id":"60-13147","desc":"Broca Pequeña 1.3 x 47 mm"},
+        {"id":"01-08196","desc":"Broca Mediana"},
+        {"id":"01-08198","desc":"Broca Larga"},
+        {"id":"PAT-2.0","desc":"Puntas Atornillador 2.0"},
+        {"id":"PAT-IMF","desc":"Punta IMF"},
+        {"id":"ZI0.6-12","desc":"Placa Recta 4 Perforaciones 1.5"},
+        {"id":"ZI0.6-13","desc":"Placa Recta 6 Perforaciones 1.5"},
+        {"id":"ZI0.6-07","desc":"Placa Recta 16 Perforaciones 1.5"},
+        {"id":"YX0.6-02","desc":"Placa Doble Y 4 Perforaciones 1.5"},
+        {"id":"YX0.6-03","desc":"Placa Doble Y 5 Perforaciones 1.5"},
+        {"id":"YX0.6-01","desc":"Placa Doble Y 6 Perforaciones 1.5"},
+        {"id":"YLO.6-12","desc":"Placa L 4 Perforaciones 1.5 Mediana Der."},
+        {"id":"YLO.6-11","desc":"Placa L 4 Perforaciones 1.5 Mediana Izq."},
+        {"id":"YLO.6-12.1","desc":"Placa L 4 Perforaciones 1.5 Larga Der."},
+        {"id":"YLO.6-11.1","desc":"Placa L 4 Perforaciones 1.5 Larga Izq."},
+        {"id":"YV0.6-02","desc":"Placa Orbital 4 Perforaciones 1.5"},
+        {"id":"YV0.6-03","desc":"Placa Orbital 5 Perforaciones 1.5"},
+        {"id":"YV0.6-04","desc":"Placa Orbital 7 Perforaciones 1.5"},
+        {"id":"WX0,4-03","desc":"Piso de Órbita 11 Perforaciones 1.5"},
+        {"id":"WX0,4-04","desc":"Piso de Órbita 12 Perforaciones 1.5"},
+        {"id":"WX0,4-05","desc":"Piso de Órbita 16 Perforaciones 1.5"},
+        {"id":"MA02-1.5x4","desc":"Tornillo Autorroscante 1.5 x 4 mm"},
+        {"id":"MA02-1.5x5","desc":"Tornillo Autorroscante 1.5 x 5 mm"},
+        {"id":"MA02-1.5x6","desc":"Tornillo Autorroscante 1.5 x 6 mm"},
+        {"id":"MA02-1.7x5","desc":"Tornillo Autorroscante 1.7 x 5 E mm"},
+        {"id":"PA.01.03.0112","desc":"Tornillo Autorroscante 2.4 x 8 mm"},
+        {"id":"PA.01.03.0114","desc":"Tornillo Autorroscante 2.4 x 10 mm"},
+        {"id":"PA.01.03.0116","desc":"Tornillo Autorroscante 2.4 x 12 mm"},
+        {"id":"PA.01.03.0118","desc":"Tornillo Autorroscante 2.4 x 14 mm"},
+        {"id":"PA.01.03.0120","desc":"Tornillo Autorroscante 2.4 x 16 mm"},
+        {"id":"PA.01.03.0131","desc":"Tornillo Autorroscante 2.7 x 10 mm"},
+        {"id":"PA.01.03.0133","desc":"Tornillo Autorroscante 2.7 x 12 mm"},
+        {"id":"PA.01.03.0135","desc":"Tornillo Autorroscante 2.7 x 14 mm"},
+        {"id":"L64933P","desc":"Placa Reconstruccion Personalizada"},
+        {"id":"54-15031","desc":"Placa Recta 4 Perforaciones Sistema 2.3"},
+        {"id":"52-23150","desc":"Tornillo Bloqueo 2.3 x 10 mm Sist. 2.3"},
+        {"id":"PKP-AMA","desc":"Set PEEK Pers. - Ángulo Mandibular A"},
+        {"id":"PKP-AMB","desc":"Set PEEK Pers. - Ángulo Mandibular B"},
+        {"id":"PKP-AMC","desc":"Set PEEK Pers. - Ángulo Mandibular C"},
+        {"id":"PKP-AMD","desc":"Set PEEK Pers. - Ángulo Mandibular D"},
+        {"id":"PKP-CZA","desc":"Set PEEK Pers. - Cigomático A"},
+        {"id":"PKP-CZB","desc":"Set PEEK Pers. - Cigomático B"},
+        {"id":"PKP-CZC","desc":"Set PEEK Pers. - Cigomático C"},
+        {"id":"PKP-CZD","desc":"Set PEEK Pers. - Cigomático D"},
+        {"id":"PKP-IFA","desc":"Set PEEK Pers. - Injerto Facial A"},
+        {"id":"PKP-IFB","desc":"Set PEEK Pers. - Injerto Facial B"},
+        {"id":"PKP-IFC","desc":"Set PEEK Pers. - Injerto Facial C"},
+        {"id":"PKP-IFD","desc":"Set PEEK Pers. - Injerto Facial D"},
+        {"id":"PKP-MNA","desc":"Set PEEK Pers. - Mentón A"},
+        {"id":"PKP-MNB","desc":"Set PEEK Pers. - Mentón B"},
+        {"id":"PKP-MNC","desc":"Set PEEK Pers. - Mentón C"},
+        {"id":"PKP-MND","desc":"Set PEEK Pers. - Mentón D"},
+        {"id":"PKP-PNA","desc":"Set PEEK Pers. - Paranasales A"},
+        {"id":"PKP-PNB","desc":"Set PEEK Pers. - Paranasales B"},
+        {"id":"PKP-PNC","desc":"Set PEEK Pers. - Paranasales C"},
+        {"id":"PKP-PND","desc":"Set PEEK Pers. - Paranasales D"},
+        {"id":"PKP-POA","desc":"Set PEEK Pers. - Piso de Órbita A"},
+        {"id":"PKP-POB","desc":"Set PEEK Pers. - Piso de Órbita B"},
+        {"id":"PKP-POC","desc":"Set PEEK Pers. - Piso de Órbita C"},
+        {"id":"PKP-POD","desc":"Set PEEK Pers. - Piso de Órbita D"},
+        {"id":"PKP-IFA","desc":"Reborde Set PEEK Pers. - Infraorbitario A"},
+        {"id":"PKP-IFB","desc":"Reborde Set PEEK Pers. - Infraorbitario B"},
+        {"id":"PKP-IFC","desc":"Reborde Set PEEK Pers. - Infraorbitario C"},
+        {"id":"PKP-IFD","desc":"Reborde Set PEEK Pers. - Infraorbitario D"},
+        {"id":"PKP-IFA","desc":"Set PEEK Pers. - Supraorbital A"},
+        {"id":"PKP-IFB","desc":"Set PEEK Pers. - Supraorbital B"},
+        {"id":"PKP-IFC","desc":"Set PEEK Pers. - Supraorbital C"},
+        {"id":"PKP-IFD","desc":"Set PEEK Pers. - Supraorbital D"},
+        {"id":"TRAU-104A","desc":"Aguja Para Microdisección"},
+        {"id":"LC-04B","desc":"Fabricacion PRF (Centrifuga)"},
+        {"id":"PBCA-2","desc":"Broca Contraángulo"},
+        {"id":"PCCA-2","desc":"Punta En Cruz Contraángulo"},
+        {"id":"OP6316","desc":"Sphere - 14mm"},
+        {"id":"US-09","desc":"Punta de Piezo"},
+        {"id":"US-02","desc":"Punta de Piezo"},
+        {"id":"5100-137-233","desc":"Sierra Reciprocante Maxilar"},
+        {"id":"5100-137-133","desc":"Sierra Reciprocante Maxilar"},
+        {"id":"5100-137-011","desc":"Sierra Reciprocante Mandíbula"},
+        {"id":"FC-053","desc":"Kit Frío Continuo"}
+      ],
+      "ORT2": [
+        {"id":"OR210-0044","desc":"Placa Avance de Mentón 4 mm"},
+        {"id":"52-23708","desc":"Tornillo Autorroscante 2.3 x 8 mm"},
+        {"id":"54-05102","desc":"Placa Recta 2 Perforaciones"},
+        {"id":"01-08203","desc":"Placa Recta 4 Perforaciones Pte. Pequeño"},
+        {"id":"01-08205","desc":"Placa Recta 4 Perforaciones Pte. Mediano"},
+        {"id":"01-08205-15","desc":"Placa Recta 4 Perforaciones Pte. Largo"},
+        {"id":"01-08205-20","desc":"Placa Recta 4 Perforaciones Pte. X Largo"},
+        {"id":"01-08207","desc":"Placa Recta 6 Perforaciones C/Pte."},
+        {"id":"01-08216","desc":"Placa Recta 16 Perforaciones"},
+        {"id":"01-08234","desc":"Placa L 4 Perforaciones Mediana Der."},
+        {"id":"01-08235","desc":"Placa L 4 Perforaciones Mediana Izq."},
+        {"id":"01-08232","desc":"Placa L 4 Perforaciones Larga Der."},
+        {"id":"01-08233","desc":"Placa L 4 Perforaciones Larga Izq."},
+        {"id":"01-08324E","desc":"Placa L 4 Perf. 100º Pequeña Der."},
+        {"id":"01-08325E","desc":"Placa L 4 Perf. 100º Pequeña Izq."},
+        {"id":"01-08324X","desc":"Placa L 4 Perf. 100º Mediana Der."},
+        {"id":"01-08325X","desc":"Placa L 4 Perf. 100º Mediana Izq."},
+        {"id":"01-08324XE","desc":"Placa L 4 Perf. 100º Larga Der."},
+        {"id":"01-08325XE","desc":"Placa L 4 Perf. 100º Larga Izq."},
+        {"id":"01-08259","desc":"Placa Doble Y 4 Perforaciones"},
+        {"id":"01-08260","desc":"Placa Doble Y 5 Perforaciones"},
+        {"id":"PA.01.031251","desc":"Placa Adelanto Maxilar 2 mm"},
+        {"id":"PA.01.031254","desc":"Placa Adelanto Maxilar 4 mm"},
+        {"id":"PA.01.031256","desc":"Placa Adelanto Maxilar 6 mm"},
+        {"id":"PA.01.031258","desc":"Placa Adelanto Maxilar 8 mm"},
+        {"id":"SinCodigo-001","desc":"Placa En Y Segmental 13 mm"},
+        {"id":"01-100300","desc":"Placa Cigomática 5"},
+        {"id":"01-100302","desc":"Placa Cigomática 8"},
+        {"id":"OR210-0041","desc":"Placa Avance de Mentón 2 mm"},
+        {"id":"OR210-0043","desc":"Placa Avance de Mentón 4 mm"},
+        {"id":"OR210-0040","desc":"Placa Avance de Mentón 6 mm"},
+        {"id":"OR210-0042","desc":"Placa Avance de Mentón 8 mm"},
+        {"id":"OR210-0044","desc":"Placa Avance de Mentón 10 mm"},
+        {"id":"52-20705","desc":"Tornillo Autoperforante 2.0 x 5 mm"},
+        {"id":"52-20706","desc":"Tornillo Autoperforante 2.0 x 6 mm"},
+        {"id":"52-20707","desc":"Tornillo Autoperforante 2.0 x 7 mm"},
+        {"id":"52-20708","desc":"Tornillo Autorroscante 2.0 x 8 mm"},
+        {"id":"52-20710","desc":"Tornillo Autorroscante 2.0 x 10 mm"},
+        {"id":"52-20712","desc":"Tornillo Autorroscante 2.0 x 12 mm"},
+        {"id":"52-20714","desc":"Tornillo Autorroscante 2.0 x 14 mm"},
+        {"id":"52-20716","desc":"Tornillo Autorroscante 2.0 x 16 mm"},
+        {"id":"52-23707","desc":"Tornillo Autorroscante 2.3 x 6 mm"},
+        {"id":"CBMA1.5-11-105","desc":"Tornillo Dual Head 1.5 x 11 mm"},
+        {"id":"54-05105","desc":"Placa Recta 4 Perforaciones 1.5"},
+        {"id":"54-05109","desc":"Placa Recta 6 Perforaciones 1.5"},
+        {"id":"54-05116","desc":"Placa Recta 16 Perforaciones 1.5"},
+        {"id":"54-05160","desc":"Placa Doble Y 4 Perforaciones 1.5"},
+        {"id":"54-05162","desc":"Placa Doble Y 5 Perforaciones 1.5"},
+        {"id":"54-05164","desc":"Placa Doble Y 6 Perforaciones 1.5"},
+        {"id":"54-05130","desc":"Placa L 4 Perforaciones 1.5 Mediana Der."},
+        {"id":"54-05131","desc":"Placa L 4 Perforaciones 1.5 Mediana Izq."},
+        {"id":"54-05134","desc":"Placa L 4 Perforaciones 1.5 Larga Der."},
+        {"id":"54-05135","desc":"Placa L 4 Perforaciones 1.5 Larga Izq."},
+        {"id":"54-05185","desc":"Placa Orbital 4 Perforaciones 1.5"},
+        {"id":"54-05185p","desc":"Placa Orbital 4 Perforaciones 1.5 C/Pte."},
+        {"id":"54-05186","desc":"Placa Orbital 5 Perforaciones 1.5"},
+        {"id":"54-05188","desc":"Placa Orbital 7 Perforaciones 1.5"},
+        {"id":"54-0.4-03","desc":"Piso de Órbita 11 Perforaciones 1.5"},
+        {"id":"54-0.4-04","desc":"Piso de Órbita 12 Perforaciones 1.5"},
+        {"id":"54-0.4-05","desc":"Piso de Órbita 16 Perforaciones 1.5"},
+        {"id":"54-06-601","desc":"Placa de Tracción En Y"},
+        {"id":"54-06-602","desc":"Placa de Tracción En T"},
+        {"id":"52-17204","desc":"Tornillo Autorroscante 1.5 x 4 mm"},
+        {"id":"52-17205","desc":"Tornillo Autorroscante 1.5 x 5 mm"},
+        {"id":"52-17206","desc":"Tornillo Autorroscante 1.5 x 6 mm"},
+        {"id":"52-19205","desc":"Tornillo Autorroscante 1.7 x 5 E mm"},
+        {"id":"PA.01.03.0112","desc":"Tornillo Autorroscante 2.4 x 8 mm"},
+        {"id":"PA.01.03.0114","desc":"Tornillo Autorroscante 2.4 x 10 mm"},
+        {"id":"PA.01.03.0116","desc":"Tornillo Autorroscante 2.4 x 12 mm"},
+        {"id":"PA.01.03.0118","desc":"Tornillo Autorroscante 2.4 x 14 mm"},
+        {"id":"PA.01.03.0120","desc":"Tornillo Autorroscante 2.4 x 16 mm"},
+        {"id":"PA.01.03.0131","desc":"Tornillo Autorroscante 2.7 x 10 mm"},
+        {"id":"PA.01.03.0133","desc":"Tornillo Autorroscante 2.7 x 12 mm"},
+        {"id":"PA.01.03.0135","desc":"Tornillo Autorroscante 2.7 x 14 mm"},
+        {"id":"L64933P","desc":"Placa Reconstruccion Personalizada"},
+        {"id":"54-15031","desc":"Placa Recta 4 Perforaciones Sistema 2.3"},
+        {"id":"52-23150","desc":"Tornillo Bloqueo 2.3 x 10 mm Sist. 2.3"},
+        {"id":"PKP-AMA","desc":"Set PEEK Pers. - Ángulo Mandibular A"},
+        {"id":"PKP-AMB","desc":"Set PEEK Pers. - Ángulo Mandibular B"},
+        {"id":"PKP-AMC","desc":"Set PEEK Pers. - Ángulo Mandibular C"},
+        {"id":"PKP-AMD","desc":"Set PEEK Pers. - Ángulo Mandibular D"},
+        {"id":"PKP-CZA","desc":"Set PEEK Pers. - Cigomático A"},
+        {"id":"PKP-CZB","desc":"Set PEEK Pers. - Cigomático B"},
+        {"id":"PKP-CZC","desc":"Set PEEK Pers. - Cigomático C"},
+        {"id":"PKP-CZD","desc":"Set PEEK Pers. - Cigomático D"},
+        {"id":"PKP-IFA","desc":"Set PEEK Pers. - Injerto Facial A"},
+        {"id":"PKP-IFB","desc":"Set PEEK Pers. - Injerto Facial B"},
+        {"id":"PKP-IFC","desc":"Set PEEK Pers. - Injerto Facial C"},
+        {"id":"PKP-IFD","desc":"Set PEEK Pers. - Injerto Facial D"},
+        {"id":"PKP-MNA","desc":"Set PEEK Pers. - Mentón A"},
+        {"id":"PKP-MNB","desc":"Set PEEK Pers. - Mentón B"},
+        {"id":"PKP-MNC","desc":"Set PEEK Pers. - Mentón C"},
+        {"id":"PKP-MND","desc":"Set PEEK Pers. - Mentón D"},
+        {"id":"PKP-PNA","desc":"Set PEEK Pers. - Paranasales A"},
+        {"id":"PKP-PNB","desc":"Set PEEK Pers. - Paranasales B"},
+        {"id":"PKP-PNC","desc":"Set PEEK Pers. - Paranasales C"},
+        {"id":"PKP-PND","desc":"Set PEEK Pers. - Paranasales D"},
+        {"id":"PKP-POA","desc":"Set PEEK Pers. - Piso de Órbita A"},
+        {"id":"PKP-POB","desc":"Set PEEK Pers. - Piso de Órbita B"},
+        {"id":"PKP-POC","desc":"Set PEEK Pers. - Piso de Órbita C"},
+        {"id":"PKP-POD","desc":"Set PEEK Pers. - Piso de Órbita D"},
+        {"id":"PKP-IFA","desc":"Set PEEK Pers. - Infraorbitario A"},
+        {"id":"PKP-IFB","desc":"Set PEEK Pers. - Infraorbitario B"},
+        {"id":"PKP-IFC","desc":"Set PEEK Pers. - Infraorbitario C"},
+        {"id":"PKP-IFD","desc":"Set PEEK Pers. - Infraorbitario D"},
+        {"id":"PKP-IFA","desc":"Set PEEK Pers. - Supraorbital A"},
+        {"id":"PKP-IFB","desc":"Set PEEK Pers. - Supraorbital B"},
+        {"id":"PKP-IFC","desc":"Set PEEK Pers. - Supraorbital C"},
+        {"id":"PKP-IFD","desc":"Set PEEK Pers. - Supraorbital D"},
+        {"id":"LC-04B","desc":"Fabricacion PRF (Centrifuga)"},
+        {"id":"TRAU-103A","desc":"Aguja Para Microdisección"},
+        {"id":"TRAU-104A","desc":"Aguja Para Microdisección"},
+        {"id":"US 02","desc":"Punta de piezo"},
+        {"id":"V-C-4","desc":"Vendaje Facial Postquirúrgico"},
+        {"id":"OP6316","desc":"Sphere - 14mm"},
+        {"id":"US-09","desc":"Punta de Piezo"},
+        {"id":"US-02","desc":"Punta de Piezo"},
+        {"id":"AL-0.40","desc":"Alambre 0.40 GX"},
+        {"id":"5100-337-233","desc":"Sierra Reciprocante Maxilar"},
+        {"id":"5100-137-233","desc":"Sierra Reciprocante Maxilar"},
+        {"id":"5100-137-133","desc":"Sierra Reciprocante Maxilar"},
+        {"id":"5100-137-011","desc":"Sierra Reciprocante Mandíbula"},
+        {"id":"VC-042","desc":"Vendaje Facial Postquirúrgico"},
+        {"id":"FC-053","desc":"Kit Frío Continuo"}
+      ]
+    };
 
-    // Do not redeclare productsPorCirugia here if already in JSON above
+    // --- JS LOGIC ---
 
-    let itemRows = [];
-    const MIN_ROWS = 1;
-
-    // Fill Cirugia options
+    // Populate surgery dropdown
     function fillCirugiaOptions() {
-      const sel = document.getElementById('cirugia');
-      sel.innerHTML = '';
-      Object.keys(productsPorCirugia).forEach(k => {
-        let opt = document.createElement('option');
-        opt.value = k;
-        opt.textContent = k;
-        sel.appendChild(opt);
+      const cirugiaSelect = document.getElementById('cirugia');
+      cirugiaSelect.innerHTML = '';
+      Object.keys(productsPorCirugia).forEach(codigo => {
+        const option = document.createElement('option');
+        option.value = codigo;
+        option.textContent = codigo;
+        cirugiaSelect.appendChild(option);
       });
     }
 
-    // Build a product row
-    function createRow(selectedList, selectedId = '', qty = '') {
-      const rowDiv = document.createElement('div');
-      rowDiv.className = 'item-row';
-
-      // Product dropdown
-      const productSel = document.createElement('select');
-      productSel.setAttribute('aria-label', 'Producto');
-      fillProductOptions(productSel, selectedList, selectedId);
-
-      // Quantity input
-      const qtyInput = document.createElement('input');
-      qtyInput.type = 'number';
-      qtyInput.min = '0';
-      qtyInput.inputMode = 'numeric';
-      qtyInput.pattern = '[0-9]*';
-      qtyInput.value = qty;
-      qtyInput.setAttribute('aria-label', 'Cantidad');
-      qtyInput.style.textAlign = 'center';
-
-      // Sync vertical height
-      productSel.style.height = '56px';
-      qtyInput.style.height = '56px';
-
-      rowDiv.appendChild(productSel);
-      rowDiv.appendChild(qtyInput);
-
-      return rowDiv;
-    }
-
-    function fillProductOptions(sel, listKey, selectedId) {
-      sel.innerHTML = '';
-      if (productsPorCirugia[listKey]) {
-        productsPorCirugia[listKey].forEach(item => {
-          const option = document.createElement('option');
-          option.value = item.id;
-          option.textContent = item.id + " – " + item.desc;
-          option.style.whiteSpace = "pre-line";
-          option.style.fontSize = "0.98em";
-          if (item.id === selectedId) option.selected = true;
-          sel.appendChild(option);
-        });
+    // Create item rows for product/qty selection
+    let currentRows = 1;
+    function renderItemsTable() {
+      const tableDiv = document.getElementById('items-table');
+      const cirugia = document.getElementById('cirugia').value;
+      const productos = productsPorCirugia[cirugia] || [];
+      let html = '';
+      for (let i = 0; i < currentRows; i++) {
+        html += `<div class="item-row">
+          <select>
+            ${productos.map(prod => `<option value="${prod.id}">${prod.desc}</option>`).join('')}
+          </select>
+          <input type="number" min="1" value="1">
+        </div>`;
       }
+      tableDiv.innerHTML = html;
     }
 
-    function addRow(selectedId = '', qty = '') {
-      const listKey = document.getElementById('cirugia').value;
-      const rowDiv = createRow(listKey, selectedId, qty);
-      itemRows.push(rowDiv);
-      renderRows();
+    function addRow() {
+      currentRows++;
+      renderItemsTable();
     }
-
     function removeRow() {
-      if (itemRows.length > MIN_ROWS) {
-        itemRows.pop();
-        renderRows();
-      }
+      if (currentRows > 1) currentRows--;
+      renderItemsTable();
     }
 
-    function renderRows() {
-      const itemsTable = document.getElementById('items-table');
-      itemsTable.innerHTML = '';
-      const listKey = document.getElementById('cirugia').value;
-      itemRows.forEach(row => {
-        const select = row.querySelector('select');
-        fillProductOptions(select, listKey, select.value);
-        itemsTable.appendChild(row);
-      });
-    }
+    // When surgery changes, rerender product dropdowns
+    document.addEventListener('DOMContentLoaded', () => {
+      fillCirugiaOptions();
+      renderItemsTable();
+      document.getElementById('cirugia').addEventListener('change', renderItemsTable);
+    });
 
-    function resetRows(n = MIN_ROWS) {
-      itemRows = [];
-      for (let i = 0; i < n; ++i) addRow();
-    }
-
-    function getToday() {
-      const d = new Date();
-      return d.toISOString().split('T')[0];
-    }
-
-    function generateCSV(e) {
-      if (e) e.preventDefault();
+    // Generate CSV
+    function generateCSV() {
       const recinto = document.getElementById('recinto').value.trim();
       const cirujano = document.getElementById('cirujano').value.trim();
       const paciente = document.getElementById('paciente').value.trim();
       const cirugia = document.getElementById('cirugia').value;
-      const fecha = getToday();
-
-      let csvLines = [
-        `Recinto\tCirujano\tPaciente\tCirugía\tFecha\tProducto\tCantidad`
-      ];
-      itemRows.forEach(row => {
+      let rows = Array.from(document.querySelectorAll('#items-table .item-row'));
+      let csv = 'Recinto,Cirujano,Paciente,Cirugía,Producto,Código,Cantidad\n';
+      rows.forEach(row => {
         const select = row.querySelector('select');
-        const qtyInput = row.querySelector('input');
-        let producto = select.value;
-        let cantidad = qtyInput.value.trim();
-        if (!cantidad) cantidad = '0';
-        csvLines.push(
-          [recinto, cirujano, paciente, cirugia, fecha, producto, cantidad].join('\t')
-        );
+        const input = row.querySelector('input');
+        const code = select.value;
+        const desc = select.options[select.selectedIndex].textContent;
+        const qty = input.value || '1';
+        csv += `${recinto},${cirujano},${paciente},${cirugia},"${desc}",${code},${qty}\n`;
       });
-      const csvString = csvLines.join('\n');
-      document.getElementById('csvOutput').textContent = csvString;
-      document.getElementById('copyBtn').style.display = '';
-      copyToClipboard(csvString);
-    }
-
-    function copyToClipboard(str) {
-      if (navigator && navigator.clipboard) {
-        navigator.clipboard.writeText(str).then(() => {
-          document.getElementById('copyBtn').textContent = '¡Copiado!';
-          setTimeout(() => {
-            document.getElementById('copyBtn').textContent = 'Copiar al portapapeles';
-          }, 1500);
-        });
-      }
+      document.getElementById('csvOutput').textContent = csv.trim();
+      document.getElementById('copyBtn').style.display = 'block';
     }
 
     function copyOutput() {
-      const txt = document.getElementById('csvOutput').textContent;
-      copyToClipboard(txt);
+      const output = document.getElementById('csvOutput').textContent;
+      navigator.clipboard.writeText(output);
     }
-
-    // On load
-    window.onload = () => {
-      fillCirugiaOptions();
-      resetRows(2);
-      document.getElementById('cirugia').addEventListener('change', renderRows);
-    };
   </script>
 </body>
 </html>

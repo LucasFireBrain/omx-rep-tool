@@ -1,0 +1,23 @@
+# 1. See which files are new/modified/untracked
+git status
+
+# 2. Add a single file (e.g. your new style.css)
+git add style.css
+
+#    OR add several files at once (e.g. also updated index.html)
+git add index.html style.css
+
+#    OR add *all* changed files in the repo
+git add .
+
+# 3. Commit your changes (write a message describing what changed)
+git commit -m "Add style.css and update index.html"
+
+# 4. Push your commit to the remote repository (GitHub)
+git push
+
+# 5. (Optional) See commit history
+git log
+
+# 6. (Optional) Pull latest changes from remote if collaborating
+git pull

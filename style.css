@@ -1,0 +1,185 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+.container {
+  max-width: 520px;
+  margin: auto;
+  padding: 16px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #0002;
+  margin-top: 8px;
+}
+h1 {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 14px;
+}
+label {
+  font-size: 1rem;
+  margin-bottom: 2px;
+  margin-left: 3px;
+  display: block;
+}
+.header-group {
+  margin-bottom: 16px;
+}
+input[type="text"], select {
+  width: 100%;
+  padding: 13px 12px;
+  margin-bottom: 10px;
+  border: 1.5px solid #bbb;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #f9f9f9;
+  box-sizing: border-box;
+  transition: border 0.15s;
+}
+input[type="text"]:focus, select:focus {
+  border: 1.5px solid #008cff;
+  outline: none;
+  background: #fff;
+}
+.dropdown-section {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.dropdown-section select {
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: 1rem;
+  padding: 12px 8px;
+  border-radius: 10px;
+}
+.dropdown-section select.cirugia-select {
+  font-weight: bold;
+  background: #eef6ff;
+  border: 2px solid #008cff;
+}
+.items-section {
+  margin-bottom: 18px;
+}
+.items-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+.items-table th, .items-table td {
+  text-align: left;
+  padding: 0;
+  border: none;
+}
+.item-row {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+.item-row select {
+  flex: 2 1 0;
+  font-size: 0.97rem;
+  padding: 19px 6px 19px 6px;
+  border-radius: 9px;
+  min-width: 0;
+  line-height: 1.1;
+  white-space: normal;
+  word-break: break-word;
+  background: #f2f2ff;
+  border: 1.5px solid #bbb;
+  box-sizing: border-box;
+}
+.item-row input[type="number"] {
+  flex: 0 0 42px;
+  min-width: 0;
+  max-width: 48px;
+  font-size: 1.05rem;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  height: 56px;
+  border-radius: 9px;
+  border: 1.5px solid #bbb;
+  background: #fafbfe;
+  box-sizing: border-box;
+}
+.big-btn {
+  width: 100%;
+  padding: 19px;
+  font-size: 1.11rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  background: #008cff;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  box-shadow: 0 1px 4px #0001;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.big-btn:active {
+  background: #006dcc;
+}
+.row-btns {
+  display: flex;
+  gap: 8px;
+  margin-top: 3px;
+  margin-bottom: 15px;
+}
+.add-row-btn, .remove-row-btn {
+  flex: 1 1 0;
+  padding: 14px 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  background: #dbeeff;
+  color: #1976d2;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.add-row-btn:active, .remove-row-btn:active {
+  background: #b0dcff;
+}
+.remove-row-btn {
+  background: #ffe4e4;
+  color: #c62828;
+}
+.remove-row-btn:active {
+  background: #ffc9c9;
+}
+.output-group {
+  margin-top: 13px;
+  background: #f2f7fa;
+  border-radius: 8px;
+  padding: 13px 8px 8px 8px;
+  font-size: 0.97rem;
+  min-height: 40px;
+  word-break: break-all;
+  user-select: all;
+}
+.copy-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  background: #4caf50;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.07rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.14s;
+}
+.copy-btn:active {
+  background: #2e7d32;
+}
+@media (max-width: 600px) {
+  .container { margin-top: 0; border-radius: 0; box-shadow: none; }
+  .output-group { font-size: 0.91rem; }
+}
